@@ -1,5 +1,5 @@
 import pytest
-from webserver import create_server
+from api import create_server
 
 
 @pytest.fixture(scope="module")
