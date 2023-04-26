@@ -29,6 +29,7 @@ run:  ## Launch API.
 test:  ## Run PyTest unit tests.
 	@echo "Running unittest suite..."
 	@pytest -vv -rA
+	@rm -rf .pytest_cache
 
 .PHONY: lint
 lint:  ## Run pep8, black, mypy linters.
@@ -52,7 +53,6 @@ clean:  ## Clean unused files.
 	@find ./ -name 'Thumbs.db' -exec rm -f {} \;
 	@find ./ -name '*~' -exec rm -f {} \;
 	@rm -rf .cache
-	@rm -rf .pytest_cache
 	@rm -rf .mypy_cache
 	@rm -rf build
 	@rm -rf dist
