@@ -4,4 +4,4 @@ WORKDIR /api
 COPY requirements.txt /api
 RUN pip install -r requirements.txt --no-cache-dir
 COPY . /api
-CMD python app.py
+CMD python app.py --port 5050
