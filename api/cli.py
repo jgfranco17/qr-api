@@ -8,7 +8,7 @@ from .models.server import create_server
 def main():  # pragma: no cover
     """
     The main function executes on commands:
-    `python3 -m dockerized-api` and `$ dockerized-api `.
+    `python3 -m qr-api` and `$ qr-api `.
 
     This is the program's entry point.
     """
