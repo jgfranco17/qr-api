@@ -20,11 +20,12 @@ def test_get_nonexistent_endpoint(client):
     """
     response = client.get("/non-existent")
     assert response.status_code == 404, "This endpoint does not exist in the architecture and should fail."
-    
-    
+
+
 @pytest.mark.parametrize(
     "host",
-    [   "www.google.com",
+    [   
+        "www.google.com",
         "example.com",
         "example.org"
     ],
@@ -35,8 +36,8 @@ def test_network_connectivity(host):
     """
     response = requests.get(f"http://{host}")
     assert response.status_code == 200, "Client should be able to reach this domain if connected to network."
-    
-    
+
+
 def test_valid_qrcode(client):
     """
     Test that a valid QR code is returned.
