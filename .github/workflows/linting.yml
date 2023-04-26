@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Project Linting
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  linter:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.10.6]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run linter
+        run: make lint
